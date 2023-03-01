@@ -9,11 +9,9 @@ double pown(double value, uint16_t n) {
     return 1;
   else if (n == 1)
     return value;
-  else {
-    while (n > 1) {
-      value *= osn;
-      n -= 1;
-    }
+  while (n > 1) {
+    value *= osn;
+    n -= 1;
   }
   return value;
 }
@@ -31,7 +29,7 @@ double calcItem(double x, uint16_t n) { return pown(x, n) / fact(n); }
 
 double expn(double x, uint16_t count) {
   double sum = 1;
-  for (int i = 1; i < count; i++) {
+  for (int i = 1; i < count + 1; i++) {
     sum += calcItem(x, i);
   }
   return sum;
